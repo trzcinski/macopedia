@@ -1,0 +1,146 @@
+.form {
+  display: inline-block;
+  width: 100%;
+  &__title {
+    color: $black;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: $bold;
+    line-height: 10px;
+    position: relative;
+    margin: 0;
+    margin-bottom: 7px;
+    @include rwd(large-tablet) {
+      margin-left: 30px;
+    }
+    @include rwd(large-phone) {
+      margin-top: 20px;
+    }
+  }
+  &__titleIcon {
+    margin-left: 8px;
+  }
+  &__titleNumber {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: $black;
+    color: $white;
+    text-align: center;
+    display: block;
+    border-radius: 50%;
+    line-height: 20px;
+    font-size: 14px;
+    left: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &__input {
+    @include form-input();
+  }
+  &__inputLabel {
+    @include form-label();
+  }
+  &__inputText {
+    appearance: text;
+    border: 0;
+    outline: 0;
+    color: $black;
+    font-size: 16px;
+    margin: 0;
+    &::placeholder {
+      color: $placeholder;
+    }
+    &:-webkit-outer-spin-button,
+    &:-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+    &--expiration {
+      display: inline-block;
+      width: 30px;
+    }
+    &--number {
+      display: inline-block;
+      width: 41px;
+    }
+  }
+  &__extra {
+    @include form-extra();
+  }
+  &__info {
+    appearance: none;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    color: rgba($black, 0.2);
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    z-index: 1;
+    background: transparent;
+  }
+  &__cardInfo {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    border: 1px solid #e2e2e2;
+    border-radius: $radius;
+    width: 37px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__cardInfoImg {
+    max-height: 15px;
+    max-width: 20px;
+  }
+  &__submit {
+    margin-top: 20px;
+    overflow: hidden;
+    position: relative;
+    background: $submitBtn;
+    height: 52px;
+    text-align: center;
+    border: none;
+    outline: 0;
+    border-bottom: $borderBottomHeight solid $submitBtnHover;
+    border-radius: $radius;
+    width: 100%;
+    font-weight: $bold;
+    text-transform: uppercase;
+    color: $white;
+    cursor: pointer;
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: $submitBtnHover;
+      content: '';
+      transition: $transition;
+      transform: translateY(100%);
+    }
+    &:hover {
+      &::after {
+        transform: translateY(0);
+      }
+    }
+  }
+  &__submitText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    z-index: 1;
+    font-size: 12px;
+  }
+  &__submitTextIcon {
+    font-size: 14px;
+    margin-right: 3px;
+  }
+}
