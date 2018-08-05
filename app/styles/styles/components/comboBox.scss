@@ -1,27 +1,17 @@
 .comboBox {
   height: 52px;
   background: $white;
-  border-radius: 2px;
+  border-radius: $radius;
   display: block;
   width: 100%;
   position: relative;
   z-index: 2;
-  border-bottom: 2px solid $border;
+  border-bottom: $borderBottomHeight solid $border;
   &__label {
-    color: $black;
-    font-weight: 700;
-    font-size: 13px;
-    line-height: 10px;
-    position: absolute;
-    top: 9px;
-    left: 10px;
+    @include form-label()
   }
   &__name {
-    position: absolute;
-    left: 10px;
-    bottom: 6px;
-    right: 10px;
-    color: $black;
+    @include form-extra();
     font-size: 16px;
   }
   &__input {
@@ -67,7 +57,7 @@
     cursor: pointer;
     width: 100%;
     border-bottom: 1px solid $border;
-    transition: background 0.3s;
+    transition: background $transition;
     &:last-of-type {
       border: none;
     }

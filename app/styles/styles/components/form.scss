@@ -5,7 +5,7 @@
     color: $black;
     text-transform: uppercase;
     font-size: 13px;
-    font-weight: 700;
+    font-weight: $bold;
     line-height: 10px;
     position: relative;
     margin: 0;
@@ -36,26 +36,10 @@
     transform: translateY(-50%);
   }
   &__input {
-    height: 52px;
-    background: $white;
-    border-radius: 2px;
-    display: block;
-    width: 100%;
-    position: relative;
-    z-index: 1;
-    border-bottom: 2px solid $border;
-    &.error {
-      border-color: red;
-    }
+    @include form-input();
   }
   &__inputLabel {
-    color: $black;
-    font-weight: 700;
-    font-size: 13px;
-    line-height: 10px;
-    position: absolute;
-    top: 9px;
-    left: 10px;
+    @include form-label();
   }
   &__inputText {
     appearance: text;
@@ -81,11 +65,7 @@
     }
   }
   &__extra {
-    position: absolute;
-    left: 10px;
-    bottom: 6px;
-    right: 10px;
-    color: $placeholder;
+    @include form-extra();
   }
   &__info {
     appearance: none;
@@ -107,7 +87,7 @@
     transform: translateY(-50%);
     right: 10px;
     border: 1px solid #e2e2e2;
-    border-radius: 2px;
+    border-radius: $radius;
     width: 37px;
     height: 20px;
     display: flex;
@@ -127,10 +107,10 @@
     text-align: center;
     border: none;
     outline: 0;
-    border-bottom: 2px solid $submitBtnHover;
-    border-radius: 2px;
+    border-bottom: $borderBottomHeight solid $submitBtnHover;
+    border-radius: $radius;
     width: 100%;
-    font-weight: 700;
+    font-weight: $bold;
     text-transform: uppercase;
     color: $white;
     cursor: pointer;
@@ -142,7 +122,7 @@
       right: 0;
       background: $submitBtnHover;
       content: '';
-      transition: 0.3s;
+      transition: $transition;
       transform: translateY(100%);
     }
     &:hover {

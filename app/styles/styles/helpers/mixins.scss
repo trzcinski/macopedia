@@ -1,0 +1,71 @@
+@mixin form-input() {
+  height: 52px;
+  background: $white;
+  border-radius: $radius;
+  display: block;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  border-bottom: $borderBottomHeight solid $border;
+  &.error {
+    border-color: red;
+  }
+}
+
+@mixin form-label() {
+  color: $black;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 10px;
+  position: absolute;
+  top: 9px;
+  left: 10px;
+}
+
+@mixin form-extra() {
+  position: absolute;
+  left: 10px;
+  bottom: 6px;
+  right: 10px;
+  color: $placeholder;
+}
+
+@mixin col {
+  padding: 0 $padding;
+  position: relative;
+  min-height: 1px;
+  margin-bottom: 18px;
+  float: left;
+}
+
+@mixin full-width {
+  @include rwd(large-phone) {
+    width: 100%;
+  }
+}
+
+@mixin push ($left) {
+  &--left {
+    left: $left;
+    @include rwd(tablet) {
+      left: auto;
+    }
+    @include full-width();
+  }
+}
+
+@mixin pull ($right) {
+  left: $right;
+  @include rwd(tablet) {
+    left: auto;
+  }
+  @include full-width();
+}
+
+@mixin table {
+  &:before,
+  &:after {
+    display: table;
+    content: " ";
+  }
+}

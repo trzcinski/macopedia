@@ -1,13 +1,10 @@
 .grid {
-  max-width: 842px;
+  max-width: $grid;
   width: 100%;
   margin-right: auto;
   margin-left: auto;
-  &:before,
-  &:after {
-    display: table;
-    content: " ";
-  }
+  @include table();
+
   &--center {
     text-align: center;
   }
@@ -20,75 +17,31 @@
     width: 100%;
   }
   &__wrap {
-    margin-right: -5px;
-    margin-left: -5px;
+    margin-right: -$padding;
+    margin-left: -$padding;
     margin-bottom: 25px;
-    &:before,
-    &:after {
-      display: table;
-      content: " ";
-    }
+    @include table();
   }
   &__col-12 {
-    padding: 0 5px;
-    position: relative;
     width: 100%;
-    min-height: 1px;
-    margin-bottom: 18px;
-    float: left;
+    @include col();
   }
   &__col-6 {
-    padding: 0 5px;
-    position: relative;
     width: 50%;
-    min-height: 1px;
-    margin-bottom: 18px;
-    float: left;
-    @include rwd(large-phone) {
-      width: 100%;
-    }
+    @include col();
+    @include full-width();
   }
   &__col-8 {
-    padding: 0 5px;
-    position: relative;
     width: 67%;
-    min-height: 1px;
-    margin-bottom: 18px;
-    float: left;
-    @include rwd(large-phone) {
-      width: 100%;
-    }
-    &--right {
-      left: -33%;
-      @include rwd(tablet) {
-        left: auto;
-        width: 67%;
-      }
-      @include rwd(large-phone) {
-        width: 100%;
-      }
-    }
+    @include col();
+    @include full-width();
+    @include pull(-33%);
   }
   &__col-4 {
-    padding: 0 5px;
-    position: relative;
     width: 33%;
-    min-height: 1px;
-    margin-bottom: 18px;
-    float: left;
-    @include rwd(large-phone) {
-      width: 100%;
-    }
-    &--left {
-      left: 67%;
-      @include rwd(tablet) {
-        left: auto;
-        width: 33%;
-      }
-      @include rwd(large-phone) {
-        width: 100%;
-      }
-    }
+    @include col();
+    @include full-width();
+    @include push (67%);
   }
   *,
   ::after,

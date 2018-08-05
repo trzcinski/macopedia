@@ -1,8 +1,8 @@
 .order {
   background: $white;
   padding: 9px;
-  border-bottom: 2px solid $border;
-  border-radius: 2px;
+  border-bottom: $borderBottomHeight solid $border;
+  border-radius: $radius;
   margin-top: 33px;
   @include rwd(large-phone) {
     margin: 0 0 10px 0;
@@ -15,19 +15,19 @@
     font-size: 11px;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: #000000;
+    color: $black;
     margin: 0 0 3px 0;
     line-height: 10px;
-    font-weight: 700;
+    font-weight: $bold;
   }
   &__group {
     border-bottom: 1px dashed $borderSecond;
     padding: 10px 0 16px 0;
-    color: #000000;
+    color: $black;
     font-size: 12px;
     line-height: 21px;
     &--total {
-      font-weight: 700;
+      font-weight: $bold;
       border: none;
       padding-top: 13px;
     }
