@@ -1,0 +1,57 @@
+.order {
+  background: $white;
+  padding: 9px;
+  border-bottom: 2px solid $border;
+  border-radius: 2px;
+  margin-top: 33px;
+  @include rwd(large-phone) {
+    margin: 0 0 10px 0;
+  }
+  &__wrap {
+    border: 1px dashed $borderSecond;
+    padding: 15px 12px 16px 12px;
+  }
+  &__title {
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #000000;
+    margin: 0 0 3px 0;
+    line-height: 10px;
+    font-weight: 700;
+  }
+  &__group {
+    border-bottom: 1px dashed $borderSecond;
+    padding: 10px 0 16px 0;
+    color: #000000;
+    font-size: 12px;
+    line-height: 21px;
+    &--total {
+      font-weight: 700;
+      border: none;
+      padding-top: 13px;
+    }
+    &:last-of-type {
+      padding-bottom: 8px;
+    }
+  }
+  &__groupItem {
+    display: inline-block;
+    width: 100%;
+  }
+  &__groupTitle {
+    width: 60%;
+    float: left;
+    &--total {
+      line-height: 10px;
+    }
+  }
+  &__groupValue {
+    width: 40%;
+    float: left;
+    text-align: right;
+    &--total {
+      font-size: 20px;
+    }
+  }
+}

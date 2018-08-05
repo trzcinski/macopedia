@@ -1,0 +1,102 @@
+.grid {
+  max-width: 842px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  &:before,
+  &:after {
+    display: table;
+    content: " ";
+  }
+  &--center {
+    text-align: center;
+  }
+  &--info {
+    font-size: 18px;
+    display: block;
+  }
+  &__clear {
+    display: inline-block;
+    width: 100%;
+  }
+  &__wrap {
+    margin-right: -5px;
+    margin-left: -5px;
+    margin-bottom: 25px;
+    &:before,
+    &:after {
+      display: table;
+      content: " ";
+    }
+  }
+  &__col-12 {
+    padding: 0 5px;
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    margin-bottom: 18px;
+    float: left;
+  }
+  &__col-6 {
+    padding: 0 5px;
+    position: relative;
+    width: 50%;
+    min-height: 1px;
+    margin-bottom: 18px;
+    float: left;
+    @include rwd(large-phone) {
+      width: 100%;
+    }
+  }
+  &__col-8 {
+    padding: 0 5px;
+    position: relative;
+    width: 67%;
+    min-height: 1px;
+    margin-bottom: 18px;
+    float: left;
+    @include rwd(large-phone) {
+      width: 100%;
+    }
+    &--right {
+      left: -33%;
+      @include rwd(tablet) {
+        left: auto;
+        width: 67%;
+      }
+      @include rwd(large-phone) {
+        width: 100%;
+      }
+    }
+  }
+  &__col-4 {
+    padding: 0 5px;
+    position: relative;
+    width: 33%;
+    min-height: 1px;
+    margin-bottom: 18px;
+    float: left;
+    @include rwd(large-phone) {
+      width: 100%;
+    }
+    &--left {
+      left: 67%;
+      @include rwd(tablet) {
+        left: auto;
+        width: 33%;
+      }
+      @include rwd(large-phone) {
+        width: 100%;
+      }
+    }
+  }
+  *,
+  ::after,
+  ::before {
+    box-sizing: border-box;
+  }
+}
+
+.mdl-layout__tab-panel {
+  background-color: #f2f2f2 !important;
+}

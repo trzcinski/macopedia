@@ -1,0 +1,78 @@
+.comboBox {
+  height: 52px;
+  background: $white;
+  border-radius: 2px;
+  display: block;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  border-bottom: 2px solid $border;
+  &__label {
+    color: $black;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 10px;
+    position: absolute;
+    top: 9px;
+    left: 10px;
+  }
+  &__name {
+    position: absolute;
+    left: 10px;
+    bottom: 6px;
+    right: 10px;
+    color: $black;
+    font-size: 16px;
+  }
+  &__input {
+    display: none;
+  }
+  &__arrow {
+    position: absolute;
+    color: $black;
+    font-size: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 16px;
+    pointer-events: none;
+    font-size: 12px;
+  }
+  &__current {
+    color: $black;
+    font-weight: 400;
+    height: 48px;
+    padding-left: 10px;
+    cursor: pointer;
+    width: 100%;
+  }
+  &__values {
+    border: 1px solid $border;
+    background: $white;
+    margin-top: 0px;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.2s, max-height 0.5s;
+    z-index: 1;
+    &.active {
+      opacity: 1;
+      max-height: 1000px;
+    }
+  }
+  &__value {
+    color: $black;
+    font-weight: 400;
+    line-height: 42px;
+    padding-left: 10px;
+    cursor: pointer;
+    width: 100%;
+    border-bottom: 1px solid $border;
+    transition: background 0.3s;
+    &:last-of-type {
+      border: none;
+    }
+    &:hover {
+      background: #f6f7f8;
+    }
+  }
+}
