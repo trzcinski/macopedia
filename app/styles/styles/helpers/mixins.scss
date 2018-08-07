@@ -6,6 +6,7 @@
   width: 100%;
   position: relative;
   z-index: 1;
+  color: $black;
   border-bottom: $borderBottomHeight solid $border;
   &.error {
     border-color: red;
